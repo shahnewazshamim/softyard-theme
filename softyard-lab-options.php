@@ -334,61 +334,61 @@ function softyard_lab_options($options)
      ******************************************************************************************************************/
     $options['home-content'] = array(
         'name' => 'home_content_section',
-        'title' => 'Home Content Section',
+        'title' => 'Home Content',
         'icon' => 'fa fa-home',
         'fields' => array(
             array(
-                'id' => 'home_content_about',
+                'id' => 'home_content_feature',
                 'type' => 'switcher',
-                'title' => 'Section About',
+                'title' => 'Features List',
                 'default' => 1,
             ),
             array(
                 'id' => 'home_content_portfolio',
                 'type' => 'switcher',
-                'title' => 'Section Portfolio',
+                'title' => 'Portfolio Gallery',
                 'default' => 1,
             ),
             array(
                 'id' => 'home_content_activity',
                 'type' => 'switcher',
-                'title' => 'Section Activity',
+                'title' => 'Activity Statistics',
                 'default' => 1,
             ),
             array(
                 'id' => 'home_content_service',
                 'type' => 'switcher',
-                'title' => 'Section Service',
+                'title' => 'Services List',
                 'default' => 1,
             ),
             array(
                 'id' => 'home_content_team',
                 'type' => 'switcher',
-                'title' => 'Section Team',
+                'title' => 'Teams',
                 'default' => 1,
             ),
             array(
                 'id' => 'home_content_twitter',
                 'type' => 'switcher',
-                'title' => 'Section Twitter',
+                'title' => 'Twitter Feed',
                 'default' => 1,
             ),
             array(
                 'id' => 'home_content_pricing',
                 'type' => 'switcher',
-                'title' => 'Section Pricing',
+                'title' => 'Pricing List',
                 'default' => 1,
             ),
             array(
                 'id' => 'home_content_partner',
                 'type' => 'switcher',
-                'title' => 'Section Partner',
+                'title' => 'Partner Slider',
                 'default' => 1,
             ),
             array(
                 'id' => 'home_content_blog',
                 'type' => 'switcher',
-                'title' => 'Section Blog',
+                'title' => 'Blog Feed',
                 'default' => 1,
             ),
         ),
@@ -399,7 +399,7 @@ function softyard_lab_options($options)
      ******************************************************************************************************************/
     $options['activity-content'] = array(
         'name' => 'activity_content_section',
-        'title' => 'Activity Stat',
+        'title' => 'Activity Statistics',
         'icon' => 'fa fa-bar-chart',
         'fields' => array(
             array(

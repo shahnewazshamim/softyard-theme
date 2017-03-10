@@ -57,6 +57,6 @@ span.sy-text-logo em {
 .header-top-right ul li span {
     float: left;
     margin-right: 15px;
-    vertical-align: middle !important;
+    margin-top: 3px;
     color: #62A0D1 !important;
 }
