@@ -3,8 +3,8 @@
     <div class="container">
         <div class="row">
             <div class="section-heading">
-                <h2 class="section-title">Our Great Team</h2>
-                <p class="section-content">Globally leverage other's clientfocused growth strategies through pandemic and an users. embrace corporate technologies for unique testing</p>
+                <h2 class="section-title"><?php echo cs_get_option('team_title'); ?></h2>
+                <p class="section-content"><?php echo cs_get_option('team_desc'); ?></p>
             </div>
         </div>
         <div class="row">

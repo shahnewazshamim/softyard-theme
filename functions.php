@@ -52,13 +52,23 @@ if (!function_exists('company_feature_post_type')) {
     {
         register_post_type('company-feature', array(
             'labels'      => array(
-                'name'          => __('Company Features'),
-                'singular_name' => __('Company Feature'),
+                'name'          => __('SY Features'),
+                'singular_name' => __('SY Feature'),
+                'add_new'            => __('Add New Feature'),
+                'add_new_item'       => __('Add New Feature'),
+                'edit_item'          => __('Edit Feature'),
+                'new_item'           => __('New Feature'),
+                'view_item'          => __('Feature List'),
+                'view_items'         => __('All Features'),
+                'all_items'          => __('All Feature'),
+                'search_items'       => __('Search Feature'),
+                'not_found'          => __('No Feature Found'),
+                'not_found_in_trash' => __('No Feature Found in Trash'),
             ),
             'public'      => TRUE,
             'has_archive' => TRUE,
             'rewrite'     => array('slug' => 'company-feature'),
-            'menu_icon'   => 'dashicons-editor-ol',
+            'menu_icon'   => 'dashicons-star-filled',
             'supports'    => array('title'),
         ));
     }
@@ -111,11 +121,11 @@ if (!function_exists('company_feature_post_type_metabox_options')) {
                             'title'   => 'Font Awesome Icon Size',
                             'class'   => 'chosen',
                             'options' => array(
-                                ''  => '1x',
-                                'fa-2x'  => '2x',
-                                'fa-3x'  => '3x',
-                                'fa-4x'  => '4x',
-                                'fa-5x'  => '5x',
+                                ''      => '1x',
+                                'fa-2x' => '2x',
+                                'fa-3x' => '3x',
+                                'fa-4x' => '4x',
+                                'fa-5x' => '5x',
                             ),
                             'default' => 'fa-2x',
                         ),
@@ -145,6 +155,74 @@ if (!function_exists('company_feature_post_type_metabox_options')) {
     }
 
     add_filter('cs_metabox_options', 'company_feature_post_type_metabox_options');
+}
+
+
+/***********************************************************************************************************************
+ * Register Custom Post type ['sy-portfolio']
+ **********************************************************************************************************************/
+
+if (!function_exists('sy_portfolio_post_type')) {
+
+    function sy_portfolio_post_type()
+    {
+        register_post_type('sy-portfolio', array(
+            'labels'      => array(
+                'name'               => __('SY Portfolios'),
+                'singular_name'      => __('SY Portfolio'),
+                'add_new'            => __('Add New Portfolio'),
+                'add_new_item'       => __('Add New Portfolio'),
+                'edit_item'          => __('Edit Portfolio'),
+                'new_item'           => __('New Portfolio'),
+                'view_item'          => __('Portfolio List'),
+                'view_items'         => __('All Portfolios'),
+                'all_items'          => __('All Portfolio'),
+                'search_items'       => __('Search Portfolio'),
+                'not_found'          => __('No Portfolio Found'),
+                'not_found_in_trash' => __('No Portfolio Found in Trash'),
+            ),
+            'public'      => TRUE,
+            'has_archive' => TRUE,
+            'rewrite'     => array('slug' => 'sy-portfolio'),
+            'menu_icon'   => 'dashicons-portfolio',
+            'supports'    => array('title', 'editor', 'thumbnail', 'comments'),
+        ));
+    }
+
+    add_action('init', 'sy_portfolio_post_type');
+}
+
+/***********************************************************************************************************************
+ * Register Custom Post type Taxonomy ['sy-portfolio']
+ **********************************************************************************************************************/
+
+if (!function_exists('sy_portfolio_type_taxonomy')) {
+
+    function sy_portfolio_type_taxonomy()
+    {
+        register_taxonomy('sy-portfolio_type', array('sy-portfolio'), array(
+            'labels'            => array(
+                'name'               => _x('Portfolio Type', 'taxonomy general name'),
+                'singular_name'      => _x('Portfolio Type', 'taxonomy singular name'),
+                'search_items'       => __('Portfolio Types', 'softyardlab'),
+                'all_items'          => __('All Portfolio Types', 'softyardlab'),
+                'parent_items'       => __('Parent Portfolio Types', 'softyardlab'),
+                'parent_items_colon' => __('Parent Portfolio Types : ', 'softyardlab'),
+                'edit_item'          => __('Edit Portfolio Type', 'softyardlab'),
+                'update_item'        => __('Update Portfolio Type', 'softyardlab'),
+                'add_new_item'       => __('Add New Portfolio Type', 'softyardlab'),
+                'new_item_name'      => __('New Portfolio Type', 'softyardlab'),
+                'menu_name'          => __('Portfolio Type', 'softyardlab'),
+            ),
+            'hierarchical'      => FALSE,
+            'show_ui'           => TRUE,
+            'show_admin_column' => TRUE,
+            'query_var'         => TRUE,
+            'rewrite'           => array('slug' => 'sy-portfolio_type'),
+        ));
+    }
+
+    add_action('init', 'sy_portfolio_type_taxonomy');
 }
 
 
