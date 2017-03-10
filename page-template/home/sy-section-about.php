@@ -6,7 +6,8 @@
             $args      = array(
                 'post_type' => 'company-feature',
                 'order' => 'DESC',
-                'orderby' => 'menu_order'
+                'orderby' => 'menu_order',
+                'posts_per_page' => 4
             );
             $the_query = new WP_Query($args);
             ?>

@@ -37,7 +37,11 @@
                     <ul>
                         <?php if (cs_get_option('fs_schedule_enable')): ?>
                             <li>
-                                <img src="<?php echo cs_get_option('fs_schedule_image') ?>" alt=""/>
+                                <?php if (!cs_get_option('fs_schedule_image_icon')): ?>
+                                    <span class="fa fa-2x <?php echo cs_get_option('fs_schedule_icon'); ?>"></span>
+                                <?php else: ?>
+                                    <img src="<?php echo cs_get_option('fs_schedule_image'); ?>" alt=""/>
+                                <?php endif; ?>
                                 <div class="header-top-contact">
                                     <h4><?php echo cs_get_option('fs_schedule_workday') ?></h4>
                                     <h5><?php echo cs_get_option('fs_schedule_offday') ?></h5>
@@ -46,7 +50,11 @@
                         <?php endif; ?>
                         <?php if (cs_get_option('fs_contact_enable')): ?>
                             <li>
-                                <img src="<?php echo cs_get_option('fs_contact_image') ?>" alt=""/>
+                                <?php if (!cs_get_option('fs_contact_image_icon')): ?>
+                                    <span class="fa fa-2x <?php echo cs_get_option('fs_contact_icon'); ?>"></span>
+                                <?php else: ?>
+                                    <img src="<?php echo cs_get_option('fs_contact_image'); ?>" alt=""/>
+                                <?php endif; ?>
                                 <div class="header-top-contact">
                                     <h4><?php echo cs_get_option('fs_contact_phone') ?></h4>
                                     <h5><?php echo cs_get_option('fs_contact_email') ?></h5>
@@ -55,7 +63,11 @@
                         <?php endif; ?>
                         <?php if (cs_get_option('fs_address_enable')): ?>
                             <li>
-                                <img src="<?php echo cs_get_option('fs_address_image') ?>" alt=""/>
+                                <?php if (!cs_get_option('fs_address_image_icon')): ?>
+                                    <span class="fa fa-2x <?php echo cs_get_option('fs_address_icon'); ?>"></span>
+                                <?php else: ?>
+                                    <img src="<?php echo cs_get_option('fs_schedule_image'); ?>" alt=""/>
+                                <?php endif; ?>
                                 <div class="header-top-contact">
                                     <h4><?php echo cs_get_option('fs_address_line_1') ?></h4>
                                     <h5><?php echo cs_get_option('fs_address_line_2') ?></h5>

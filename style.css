@@ -53,3 +53,10 @@ span.sy-text-logo em {
     -o-transform      : rotateY(0deg);
     transform         : rotateY(0deg);
 }
+
+.header-top-right ul li span {
+    float: left;
+    margin-right: 15px;
+    vertical-align: middle !important;
+    color: #62A0D1 !important;
+}
