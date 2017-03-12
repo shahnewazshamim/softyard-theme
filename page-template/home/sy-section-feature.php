@@ -3,12 +3,13 @@
     <div class="container">
         <div class="row">
             <?php
-            $args      = array(
+            $args = array(
                 'post_type'      => 'company-feature',
                 'order'          => 'DESC',
                 'orderby'        => 'menu_order',
                 'posts_per_page' => 4,
             );
+
             $the_query = new WP_Query($args);
             ?>
             <?php if (have_posts()): while ($the_query->have_posts()) : $the_query->the_post(); ?>

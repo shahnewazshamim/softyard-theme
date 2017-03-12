@@ -8,6 +8,13 @@ require_once 'softyard-lab-options.php';
 
 
 /***********************************************************************************************************************
+ * Softyard LAB Theme Supports
+ **********************************************************************************************************************/
+
+add_theme_support('post-thumbnails');
+
+
+/***********************************************************************************************************************
  * Register Navigation on Theme
  **********************************************************************************************************************/
 
@@ -52,8 +59,8 @@ if (!function_exists('company_feature_post_type')) {
     {
         register_post_type('company-feature', array(
             'labels'      => array(
-                'name'          => __('SY Features'),
-                'singular_name' => __('SY Feature'),
+                'name'               => __('SY Features'),
+                'singular_name'      => __('SY Feature'),
                 'add_new'            => __('Add New Feature'),
                 'add_new_item'       => __('Add New Feature'),
                 'edit_item'          => __('Edit Feature'),
@@ -185,12 +192,13 @@ if (!function_exists('sy_portfolio_post_type')) {
             'has_archive' => TRUE,
             'rewrite'     => array('slug' => 'sy-portfolio'),
             'menu_icon'   => 'dashicons-portfolio',
-            'supports'    => array('title', 'editor', 'thumbnail', 'comments'),
+            'supports'    => array('title', 'editor', 'thumbnail'),
         ));
     }
 
     add_action('init', 'sy_portfolio_post_type');
 }
+
 
 /***********************************************************************************************************************
  * Register Custom Post type Taxonomy ['sy-portfolio']
@@ -226,6 +234,103 @@ if (!function_exists('sy_portfolio_type_taxonomy')) {
 }
 
 
+/***********************************************************************************************************************
+ * ['sy-portfolio'] Post Type MetaBox Options
+ **********************************************************************************************************************/
+
+if (!function_exists('sy_portfolio_post_type_metabox_options')) {
+
+    function sy_portfolio_post_type_metabox_options()
+    {
+        $options = array();
+
+        $options['sy-portfolio'] = array(
+            'id'        => '_sy_portfolio_post_options',
+            'title'     => 'Portfolio Meta',
+            'post_type' => 'sy-portfolio',
+            'context'   => 'normal',
+            'priority'  => 'default',
+            'sections'  => array(
+                array(
+                    'name'   => 'portfolio_fields',
+                    'fields' => array(
+                        array(
+                            'id'         => 'portfolio_fields_client',
+                            'type'       => 'text',
+                            'title'      => 'Client Name',
+                            'attributes' => array(
+                                'placeholder' => 'Ex: Microsoft',
+                            ),
+                        ),
+                        array(
+                            'id'         => 'portfolio_fields_date',
+                            'type'       => 'text',
+                            'title'      => 'Project Compilation Date',
+                            'attributes' => array(
+                                'placeholder' => 'Ex: September 12, 2017',
+                            ),
+                        ),
+                        array(
+                            'id'         => 'portfolio_fields_tech',
+                            'type'       => 'text',
+                            'title'      => 'Technology Used',
+                            'attributes' => array(
+                                'placeholder' => 'Ex: OOP, PHP, MySQL',
+                                'style'       => 'width: 100%',
+                            ),
+                        ),
+                        array(
+                            'id'         => 'portfolio_fields_demo',
+                            'type'       => 'text',
+                            'title'      => 'Demo URL',
+                            'attributes' => array(
+                                'placeholder' => 'Ex: http://softyardbd.com',
+                            ),
+                        ),
+                        array(
+                            'id'         => 'portfolio_fields_live',
+                            'type'       => 'text',
+                            'title'      => 'Live URL',
+                            'attributes' => array(
+                                'placeholder' => 'Ex: http://softyardbd.com',
+                            ),
+                        ),
+                        array(
+                            'id'         => 'portfolio_fields_download',
+                            'type'       => 'text',
+                            'title'      => 'Download URL',
+                            'attributes' => array(
+                                'placeholder' => 'Ex: http://softyardbd.com',
+                            ),
+                        ),
+                        array(
+                            'id'         => 'portfolio_fields_github',
+                            'type'       => 'text',
+                            'title'      => 'Git Hub Repository',
+                            'attributes' => array(
+                                'placeholder' => 'Ex: http://github.com/',
+                            ),
+                        ),
+                        array(
+                            'id'         => 'portfolio_fields_bitbucket',
+                            'type'       => 'text',
+                            'title'      => 'Bitbucket Repository',
+                            'attributes' => array(
+                                'placeholder' => 'Ex: http://bitbucket.org/',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        );
+
+        return $options;
+    }
+
+    add_filter('cs_metabox_options', 'sy_portfolio_post_type_metabox_options');
+}
+
+add_image_size('portfolio-thumb', 384, 310, TRUE);
 /***********************************************************************************************************************
  * Initialize Theme Widget Area
  **********************************************************************************************************************/
