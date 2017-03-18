@@ -1,5 +1,5 @@
 <!-- Preloader -->
-<div id="loading">
+<!--<div id="loading">
     <div id="loading-center">
         <div id="loading-center-absolute">
             <div class="object" id="object_one"></div>
@@ -13,7 +13,7 @@
             <div class="object" id="object_big"></div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- Preloader -->
 
 <!-- Header Section -->

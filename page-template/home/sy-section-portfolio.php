@@ -12,9 +12,9 @@
                 <?php
                 $args = array(
                     'post_type'      => 'sy-portfolio',
-                    'order'          => 'DESC',
-                    'orderby'        => 'post_date',
-                    'posts_per_page' => 1,
+                    'order'          => 'ASC',
+                    'orderby'        => 'post_title',
+                    'posts_per_page' => 6,
                 );
 
                 $the_query = new WP_Query($args);

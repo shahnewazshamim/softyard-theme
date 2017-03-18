@@ -208,7 +208,7 @@ if (!function_exists('sy_portfolio_type_taxonomy')) {
 
     function sy_portfolio_type_taxonomy()
     {
-        register_taxonomy('sy-portfolio_type', array('sy-portfolio'), array(
+        register_taxonomy('sy-portfolio-type', array('sy-portfolio'), array(
             'labels'            => array(
                 'name'               => _x('Portfolio Type', 'taxonomy general name'),
                 'singular_name'      => _x('Portfolio Type', 'taxonomy singular name'),
@@ -226,7 +226,7 @@ if (!function_exists('sy_portfolio_type_taxonomy')) {
             'show_ui'           => TRUE,
             'show_admin_column' => TRUE,
             'query_var'         => TRUE,
-            'rewrite'           => array('slug' => 'sy-portfolio_type'),
+            'rewrite'           => array('slug' => 'sy-portfolio-type'),
         ));
     }
 
@@ -331,6 +331,7 @@ if (!function_exists('sy_portfolio_post_type_metabox_options')) {
 }
 
 add_image_size('portfolio-thumb', 384, 310, TRUE);
+add_image_size('related-thumb', 241, 152, TRUE);
 /***********************************************************************************************************************
  * Initialize Theme Widget Area
  **********************************************************************************************************************/
